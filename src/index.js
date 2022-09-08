@@ -41,6 +41,14 @@ const smtpTransport = nodemailer.createTransport({
   },
 });
 
+/**
+ * Sends an email via dabney.comptrollers@gmail.com
+ *
+ * @param {string} to The email address to send to
+ * @param {string} subject The subject line of the email
+ * @param {string} html The html to be sent in the email (can also be plain text)
+ * @returns Promise
+ */
 async function sendEmail(to, subject, html) {
   const mailOptions = {
     from: COMPTROLLER_EMAIL,
