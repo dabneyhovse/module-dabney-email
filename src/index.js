@@ -18,9 +18,9 @@ const OAuth2 = google.auth.OAuth2;
 const COMPTROLLER_EMAIL = "dabney.comptrollers@gmail.com";
 
 const oauth2Client = new OAuth2(
-  process.env.CLIENT_ID, // ClientID
-  process.env.CLIENT_SECRET, // Client Secret
-  process.env.REDIRECT_URL // Redirect URL
+  process.env.CLIENT_ID,
+  process.env.CLIENT_SECRET,
+  process.env.REDIRECT_URL
 );
 
 oauth2Client.setCredentials({
@@ -45,7 +45,7 @@ async function sendEmail(to, subject, html) {
   const mailOptions = {
     from: COMPTROLLER_EMAIL,
     to,
-    subject: "Node.js Email with Secure OAuth",
+    subject,
     generateTextFromHTML: true,
     html: html,
   };
