@@ -17,8 +17,8 @@ const COMPTROLLER_EMAIL = "comptrollers@dabney.caltech.edu";
 
 const smtpTransport = nodemailer.createTransport({
   host: "mail.dabney.caltech.edu",
-  port: 465,
-  secure: true,
+  port: 587,
+  secure: false,
 });
 
 /**
