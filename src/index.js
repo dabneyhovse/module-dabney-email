@@ -38,6 +38,7 @@ async function sendEmail(to, subject, html) {
     html: html,
     tls: { 
       rejectUnauthorized: false,
+      servername:"mail.dabney.caltech.edu",
     },
   };
 
