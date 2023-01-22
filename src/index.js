@@ -16,7 +16,7 @@ require("dotenv").config();
 const COMPTROLLER_EMAIL = "comptrollers@dabney.caltech.edu";
 
 const smtpTransport = nodemailer.createTransport({
-  host: "127.0.0.1",
+  host: "mail.dabney.caltech.edu",
   port: 465,
   secure: true,
 });
