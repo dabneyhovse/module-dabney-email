@@ -19,7 +19,9 @@ const smtpTransport = nodemailer.createTransport({
   host: "127.0.0.1",
   port: 587,
   secure: false,
-  tls.servername:"mail.dabney.caltech.edu",
+  tls:{
+    servername:"mail.dabney.caltech.edu",
+  },
 });
 
 /**
