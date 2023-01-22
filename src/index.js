@@ -19,6 +19,7 @@ const smtpTransport = nodemailer.createTransport({
   host: "127.0.0.1",
   port: 587,
   secure: false,
+  tls.servername:"mail.dabney.caltech.edu",
 });
 
 /**
@@ -38,7 +39,6 @@ async function sendEmail(to, subject, html) {
     html: html,
     tls: { 
       rejectUnauthorized: false,
-      servername:"mail.dabney.caltech.edu",
     },
   };
 
