@@ -36,6 +36,9 @@ async function sendEmail(to, subject, html) {
     subject,
     generateTextFromHTML: true,
     html: html,
+    tls: { 
+      rejectUnauthorized: false,
+    },
   };
 
   return new Promise((resolve, reject) => {
