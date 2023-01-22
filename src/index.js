@@ -4,45 +4,25 @@
  *
  * Simple email sending module local to the dabney services
  * this was created so that it is easy for services to send
- * emails via the dabney.comptrollers@gmail.com mail.
+ * emails via the dcomptrollers@dabney.caltech.edu mail.
  *
  * It would be easy to send fake emails with this module,
  * but honor code and comptroller code review
  */
 
 const nodemailer = require("nodemailer");
-const { google } = require("googleapis");
 require("dotenv").config();
 
-const OAuth2 = google.auth.OAuth2;
-const COMPTROLLER_EMAIL = "dabney.comptrollers@gmail.com";
-
-const oauth2Client = new OAuth2(
-  process.env.CLIENT_ID,
-  process.env.CLIENT_SECRET,
-  process.env.REDIRECT_URL
-);
-
-oauth2Client.setCredentials({
-  refresh_token: process.env.REFRESH_TOKEN,
-});
-
-const accessToken = oauth2Client.getAccessToken();
+const COMPTROLLER_EMAIL = "comptrollers@dabney.caltech.edu";
 
 const smtpTransport = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    type: "OAuth2",
-    user: COMPTROLLER_EMAIL,
-    clientId: process.env.CLIENT_ID,
-    clientSecret: process.env.CLIENT_SECRET,
-    refreshToken: process.env.REFRESH_TOKEN,
-    accessToken: accessToken,
-  },
+  host: "127.0.0.1",
+  port: 465,
+  secure: true,
 });
 
 /**
- * Sends an email via dabney.comptrollers@gmail.com
+ * Sends an email via comptrollers@dabney.caltech.edu
  *
  * @param {string} to The email address to send to
  * @param {string} subject The subject line of the email
