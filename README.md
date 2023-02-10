@@ -1,5 +1,5 @@
 # module-dabney-email
-Simple node module for services to use locally to send emails with the comptroller gmail account
+Simple node module for services to use locally to send emails with the comptroller email account
 
 
 Credientals are contained within the .env file (ignored by git) 
