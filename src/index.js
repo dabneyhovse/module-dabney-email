@@ -4,14 +4,13 @@
  *
  * Simple email sending module local to the dabney services
  * this was created so that it is easy for services to send
- * emails via the dcomptrollers@dabney.caltech.edu mail.
+ * emails via the comptrollers@dabney.caltech.edu mail.
  *
  * It would be easy to send fake emails with this module,
  * but honor code and comptroller code review
  */
 
 const nodemailer = require("nodemailer");
-require("dotenv").config();
 
 const COMPTROLLER_EMAIL = "comptrollers@dabney.caltech.edu";
 
@@ -39,7 +38,7 @@ async function sendEmail(to, subject, html) {
     subject,
     generateTextFromHTML: true,
     html: html,
-    tls: { 
+    tls: {
       rejectUnauthorized: false,
     },
   };
